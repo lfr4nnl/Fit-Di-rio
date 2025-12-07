@@ -1,0 +1,33 @@
+body {
+    background: #111;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #0a84ff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    margin-top: 20px;
+}
+
+button:active {
+    background: #0066d1;
+}
