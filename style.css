@@ -1,33 +1,30 @@
-body {
-    background: #111;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
 
-.container {
-    padding: 20px;
-    max-width: 500px;
-    margin: auto;
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#0a84ff;
+  --muted:#94a3b8;
+  --glass: rgba(255,255,255,0.03);
 }
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-button {
-    width: 100%;
-    padding: 15px;
-    background: #0a84ff;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    color: white;
-    margin-top: 20px;
-}
-
-button:active {
-    background: #0066d1;
-}
+*{box-sizing:border-box}
+html,body,#app{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
+body{background:linear-gradient(180deg,#071022 0%, var(--bg) 100%);color:#fff;display:flex;flex-direction:column}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;background:transparent}
+.header h1{margin:0;font-size:20px;letter-spacing:0.5px}
+.install-btn{background:var(--accent);border:none;padding:8px 12px;border-radius:10px;color:#fff}
+.main{flex:1;padding:16px;display:flex;flex-direction:column;gap:12px}
+.today-card{background:var(--card);padding:16px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.today-card h2{margin:0 0 8px 0;font-size:18px}
+.exercise-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.exercise-item{display:flex;align-items:center;gap:10px;padding:10px;background:var(--glass);border-radius:10px}
+.exercise-item .label{flex:1}
+.btn{background:var(--accent);border:none;color:#fff;padding:10px 12px;border-radius:10px}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06)}
+.small{color:var(--muted);font-size:13px;padding:0 4px}
+.bottom-nav{display:flex;gap:6px;justify-content:space-between;padding:12px;background:transparent}
+.nav-btn{flex:1;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+.nav-btn.active{background:rgba(255,255,255,0.04);color:#fff;border-color:rgba(255,255,255,0.06)}
+.footer{padding:12px;text-align:center;color:var(--muted);font-size:12px}
+.checkbox{width:20px;height:20px;border-radius:6px;border:1px solid rgba(255,255,255,0.12);display:inline-flex;align-items:center;justify-content:center}
+.checkbox.checked{background:var(--accent);border-color:var(--accent)}
+.countdown{font-weight:700}
