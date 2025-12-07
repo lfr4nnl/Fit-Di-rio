@@ -1,23 +1,28 @@
-self.addEventListener("install", (e) => {
-    e.waitUntil(
-        caches.open("fit-v1").then((cache) => {
-            return cache.addAll([
-                "index.html",
-                "style.css",
-                "script.js",
-                "manifest.json",
-                "icons/icon-192.png",
-                "icons/icon-512.png"
-            ]);
-        })
-    );
-    console.log("Service Worker instalado!");
+const CACHE_NAME = 'fit-cache-v1';
+const OFFLINE_URLS = [
+  '/',
+  '/index.html',
+  '/style.css',
+  '/app.js',
+  '/manifest.json',
+  '/icons/icon-192.png',
+  '/icons/icon-512.png'
+];
+
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(cache => cache.addAll(OFFLINE_URLS))
+      .then(() => self.skipWaiting())
+  );
 });
 
-self.addEventListener("fetch", (e) => {
-    e.respondWith(
-        caches.match(e.request).then((resp) => {
-            return resp || fetch(e.request);
-        })
-    );
+self.addEventListener('activate', event => {
+  event.waitUntil(self.clients.claim());
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(
+    caches.match(event.request).then(resp => resp || fetch(event.request))
+  );
 });
