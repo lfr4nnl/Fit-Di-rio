@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Treino Diário — Fit Diário</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0a84ff" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app" class="app">
+    <header class="header">
+      <h1>Fit Diário</h1>
+      <button id="installBtn" class="install-btn" hidden>Instalar</button>
+    </header>
+
+    <main class="main">
+      <section class="home" id="homeView">
+        <div class="today-card">
+          <h2 id="todayName"></h2>
+          <ul id="todayList" class="exercise-list"></ul>
+          <div class="actions">
+            <button id="markAll" class="btn">Marcar tudo</button>
+            <button id="clearAll" class="btn ghost">Limpar</button>
+          </div>
+        </div>
+        <div class="small">
+          <p>Próximo treino: <strong>16:00</strong></p>
+          <p id="countdown">—</p>
+        </div>
+      </section>
+
+      <nav class="bottom-nav">
+        <button data-day="Monday" class="nav-btn">Seg</button>
+        <button data-day="Tuesday" class="nav-btn">Ter</button>
+        <button data-day="Wednesday" class="nav-btn">Qua</button>
+        <button data-day="Thursday" class="nav-btn">Qui</button>
+        <button data-day="Friday" class="nav-btn">Sex</button>
+        <button data-day="Saturday" class="nav-btn">Sáb</button>
+        <button data-day="Sunday" class="nav-btn">Dom</button>
+      </nav>
+    </main>
+
+    <footer class="footer">
+      <small>Feito pra você — treine com segurança. Se sentir dor, pare.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
